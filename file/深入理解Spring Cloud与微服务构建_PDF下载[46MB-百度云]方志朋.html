@@ -1,0 +1,260 @@
+深入理解Spring Cloud与微服务构建 PDF下载 方志朋 百度云 电子书 下载 电子书下载
+PDF电子书下载不求人，看这篇文章就够了→ http://www.chendianrong.com/pdf#711547522
+PDF电子书下载不求人，看这篇文章就够了→ http://www.chendianrong.com/pdf#711547522
+<p>书名:深入理解Spring Cloud与微服务构建</p><p>作者:方志朋</p><p>页数:262</p><p>定价:¥69.0</p><p>出版社:人民邮电出版社</p><p>出版日期:2018-03-01</p><p>ISBN:9787115475220</p><p><h2>本书特色</h2></p>[<p>
+本书共分16章，全面涵盖了Spring Cloud构建微服务相关的知识点。* 1、2章详细介绍了微服务架构和Spring Cloud。第3、4章讲解了用Spring Cloud构建微服务的准备工作。第5～12章以案例为切入点，讲解了Spring Cloud构建微服务的基础组件，包括Eureka、Ribbon、Feign、Hystrix、Zuul、Config、Sleuth、Admint等组件。* 13～15章讲述了使用Spring Cloud OAuth2来保护微服务系统的相关知识。* 16章用一个综合案例，全面讲解了如何使用Spring Cloud构建微服务，可以作为实际开发的样例工程。
+本书既适合Spring Cloud初学者入门使用，又适合正在做微服务实践的架构师或打算实施微服务的团队作为参考用书，同时也可作为高等院校计算机相关专业的师生用书和培训学校的教材。
+                                        </p>]<p><h2>内容简介</h2></p>[<p>1. 深入浅出讲解Spring Cloud组件、开发工具、框架等知识点。
+2. 使读者全面理解微服务的构建原理。
+3. 实例丰富，解释清晰，易于读者真正理解原理，并学以致用。
+4. 深入讲解Spring Cloud OAuth2，直击市场需求痛点。 </p>]<p><h2>作者简介</h2></p>[<p>作者方志朋，毕业于武汉理工大学硕士学位。
+Spring Cloud中国社区联合发起人、CSDN博客专家，专注于分布式系统和大数据领域的研究和开发，乐于分享，爱好开源，对技术有着强烈的追求，活跃于各大技术社区，</p>]<p><h2>目录</h2></p>
+
+目　　录
+* 1章　微服务简介	1
+1.1　单体架构及其存在的不足	1
+1.1.1　单体架构简介	1
+1.1.2　单体架构存在的不足	2
+1.1.3　单体架构使用服务器集群
+及存在的不足	2
+1.2　微服务	3
+1.2.1　什么是微服务	4
+1.2.2　微服务的优势	8
+1.3　微服务的不足	9
+1.3.1　微服务的复杂度	9
+1.3.2　分布式事务	9
+1.3.3　服务的划分	11
+1.3.4　服务的部署	11
+1.4　微服务和SOA的关系	12
+1.5　微服务的设计原则	12
+* 2章　Spring Cloud简介	14
+2.1　微服务应该具备的功能	14
+2.1.1　服务的注册与发现	15
+2.1.2　服务的负载均衡	15
+2.1.3　服务的容错	17
+2.1.4　服务网关	18
+2.1.5　服务配置的统一管理	19
+2.1.6　服务链路追踪	20
+2.2　Spring Cloud	21
+2.2.1　简介	21
+2.2.2　常用组件	21
+2.2.3　项目一览表	23
+2.3　Dubbo简介	24
+2.4　Spring Cloud与Dubbo比较	25
+2.5　Kubernetes简介	26
+2.6　Spring Could与Kubernetes比较	27
+2.7　总结	29
+第3章　构建微服务的准备	30
+3.1　JDK的安装	30
+3.1.1　JDK的下载和安装	30
+3.1.2　环境变量的配置	30
+3.2　IDEA的安装	31
+3.2.1　IDEA的下载	31
+3.2.2　用IDEA创建一个Spring Boot
+工程	32
+3.2.3　用IDEA启动多个Spring Boot
+工程实例	34
+3.3　构建工具Maven的使用	35
+3.3.1　Maven简介	35
+3.3.2　Maven的安装	35
+3.3.3　Maven的核心概念	37
+3.3.4　编写Pom文件	37
+3.3.5　Maven构建项目的生命周期	39
+3.3.6　常用的Maven命令	40
+第4章　开发框架Spring Boot	43
+4.1　Spring Boot简介	43
+4.1.1　Spring Boot的特点	43
+4.1.2　Spring Boot的优点	44
+4.2　用IDEA构建Spring Boot工程	44
+4.2.1　项目结构	44
+4.2.2　在Spring Boot工程中构建
+Web	45
+4.2.3　Spring Boot的测试	46
+4.3　Spring Boot配置文件详解	46
+4.3.1　自定义属性	47
+4.3.2　将配置文件的属性赋给
+实体类	47
+4.3.3　自定义配置文件	49
+4.3.4　多个环境的配置文件	50
+4.4　运行状态监控Actuator	50
+4.4.1　查看运行程序的健康状态	52
+4.4.2　查看运行程序的Bean	53
+4.4.3　使用Actuator关闭应用程序	55
+4.4.4　使用shell连接Actuator	56
+4.5　Spring Boot整合JPA	57
+4.6　Spring Boot整合Redis	60
+4.6.1　Redis简介	60
+4.6.2　Redis的安装	60
+4.6.3　在Spring Boot中使用Redis	60
+4.7　Spring Boot整合Swagger2，搭建
+Restful API在线文档	62
+第5章　服务注册和发现Eureka	66
+5.1　Eureka简介	66
+5.1.1　什么是Eureka	66
+5.1.2　为什么选择Eureka	66
+5.1.3　Eureka的基本架构	67
+5.2　编写Eureka Server	67
+5.3　编写Eureka Client	70
+5.4　源码解析Eureka	73
+5.4.1　Eureka的一些概念	73
+5.4.2　Eureka的高可用架构	74
+5.4.3　Register服务注册	74
+5.4.4　Renew服务续约	78
+5.4.5　为什么Eureka Client获取
+服务实例这么慢	80
+5.4.6　Eureka 的自我保护模式	80
+5.5　构建高可用的Eureka Server集群	81
+5.6　总结	83
+第6章　负载均衡Ribbon	84
+6.1　RestTemplate简介	84
+6.2　Ribbon简介	85
+6.3　使用RestTemplate和Ribbon来消费
+服务	85
+6.4　LoadBalancerClient简介	88
+6.5　源码解析Ribbon	90
+第7章　声明式调用Feign	101
+7.1　写一个Feign客户端	101
+7.2　FeignClient详解	105
+7.3　FeignClient的配置	106
+7.4　从源码的角度讲解Feign的工作
+原理	107
+7.5　在Feign中使用HttpClient和
+OkHttp	110
+7.6　Feign是如何实现负载均衡的	112
+7.7　总结	114
+第8章　熔断器Hystrix	115
+8.1　什么是Hystrix	115
+8.2　Hystrix解决了什么问题	115
+8.3　Hystrix的设计原则	117
+8.4　Hystrix的工作机制	117
+8.5　在RestTemplate和Ribbon上使用
+熔断器	118
+8.6　在Feign上使用熔断器	119
+8.7　使用Hystrix Dashboard监控熔断器的
+状态	120
+8.7.1　在RestTemplate中使用Hystrix Dashboard	120
+8.7.2　在Feign中使用
+Hystrix Dashboard	123
+8.8　使用Turbine聚合监控	124
+第9章　路由网关Spring Cloud Zuul	126
+9.1　为什么需要Zuul	126
+9.2　Zuul的工作原理	126
+9.3　案例实战	128
+9.3.1　搭建Zuul服务	128
+9.3.2　在Zuul上配置API接口的
+版本号	131
+9.3.3　在Zuul上配置熔断器	132
+9.3.4　在Zuul中使用过滤器	133
+9.3.5　Zuul的常见使用方式	135
+* 10章　配置中心
+Spring Cloud Config	137
+10.1　Config Server从本地读取配置文件	137
+10.1.1　构建Config Server	137
+10.1.2　构建Config Client	138
+10.2　Config Server从远程Git仓库读取
+配置文件	140
+10.3　构建高可用的Config Server	141
+10.3.1　构建Eureka Server	141
+10.3.2　改造Config Server	142
+10.3.3　改造Config Client	143
+10.4 使用Spring Cloud Bus刷新配置	144
+* 11章　服务链路追踪
+Spring Cloud Sleuth	147
+11.1　为什么需要Spring Cloud Sleuth	147
+11.2　基本术语	147
+11.3　案例讲解	148
+11.3.1　构建Zipkin Server	148
+11.3.2　构建User Service	149
+11.3.3　构建Gateway Service	151
+11.3.4　项目演示	152
+11.4　在链路数据中添加自定义数据	153
+11.5　使用RabbitMQ 传输链路数据	154
+11.6　在MySQL数据库中存储链路数据	155
+11.6.1　使用Http传输链路数据，
+并存储在MySQL数据
+库中	156
+11.6.2　使用RabbitMQ传输链路
+数据，并存储在MySQL
+数据库中	157
+11.7　在ElasticSearch中存储链路数据	158
+11.8　用Kibana展示链路数据	159
+* 12章　微服务监控
+Spring Boot Admin	161
+12.1　使用Spring Boot Admin监控Spring Cloud微服务	161
+12.1.1　构建Admin Server	161
+12.1.2　构建Admin Client	163
+12.2　在Spring Boot Admin中集成Turbine	166
+12.2.1　改造Eureka Client	166
+12.2.2　另行构建Eureka Client	167
+12.2.3　构建Turbine工程	168
+12.2.4　在Admin Server中集成
+Turbine	169
+12.3　在Spring Boot Admin中添加安全
+登录界面	172
+* 13章　Spring Boot Security详解	174
+13.1　Spring Security简介	174
+13.1.1　什么是Spring Security	174
+13.1.2　为什么选择Spring Security	174
+13.1.3　Spring Security提供的安全
+模块	175
+13.2　Spring Boot Security与Spring Security
+的关系	176
+13.3　Spring Boot Security案例详解	176
+13.3.1　构建Spring Boot Security
+工程	176
+13.3.2　配置Spring Security	178
+13.3.3　编写相关界面	180
+13.3.4　Spring Security方法级别上
+的保护	185
+13.3.5　从数据库中读取用户的
+认证信息	188
+13.4　总结	193
+* 14章　使用Spring Cloud OAuth2
+保护微服务系统	195
+14.1　什么是OAuth2	195
+14.2　如何使用Spring OAuth2	196
+14.2.1　OAuth2 Provider	196
+14.2.2　OAuth2 Client	200
+14.3　案例分析	201
+14.3.1　编写Eureka Server	202
+14.3.2　编写Uaa授 权服务	202
+14.3.3　编写service-hi资源服务	209
+14.4　总结	215
+* 15章　使用Spring Security OAuth2
+和JWT保护微服务系统	217
+15.1　JWT简介	217
+15.1.1　什么是JWT	217
+15.1.2　JWT的结构	218
+15.1.3　JWT的应用场景	219
+15.1.4　如何使用JWT	219
+15.2　案例分析	219
+15.2.1　案例架构设计	219
+15.2.2　编写主Maven工程	220
+15.2.3　编写Eureka Server	221
+15.2.4　编写Uaa授 权服务	222
+15.2.5　编写user-service资源服务	227
+15.3  总结	236
+* 16章　使用Spring Cloud构建微
+服务综合案例	237
+16.1　案例介绍	237
+16.1.1　工程结构	237
+16.1.2　使用的技术栈	238
+16.1.3　工程架构	238
+16.1.4　功能展示	240
+16.2　案例详解	244
+16.2.1　准备工作	244
+16.2.2　构建主Maven工程	244
+16.2.3　构建eureka-server工程	245
+16.2.4　构建config-server工程	246
+16.2.5　构建zipkin-service工程	247
+16.2.6　构建monitoring-service
+工程	248
+16.2.7　构建uaa-service工程	250
+16.2.8　构建gateway-service工程	251
+16.2.9　构建admin-service工程	253
+16.2.10　构建user-service工程	253
+16.2.11　构建blog-service工程	256
+16.2.12　构建log-service工程	256
+16.3　启动源码工程	260
+16.4　项目演示	261
+16.5　总结	262

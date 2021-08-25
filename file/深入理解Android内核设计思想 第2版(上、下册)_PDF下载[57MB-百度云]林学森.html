@@ -1,0 +1,487 @@
+深入理解Android内核设计思想 第2版(上、下册) PDF下载 林学森 百度云 电子书 下载 电子书下载
+PDF电子书下载不求人，看这篇文章就够了→ http://www.chendianrong.com/pdf#711545263
+PDF电子书下载不求人，看这篇文章就够了→ http://www.chendianrong.com/pdf#711545263
+<p>书名:深入理解Android内核设计思想 第2版(上、下册)</p><p>作者:林学森</p><p>页数:996</p><p>定价:¥158.0</p><p>出版社:人民邮电出版社</p><p>出版日期:2017-02-01</p><p>ISBN:9787115452634</p><p><h2>本书特色</h2></p>[<p>
+全书从操作系统的基础知识入手，全面剖析进程/线程、内存管理、Binder机制、GUI显示系统、多媒体管理、输入系统、虚拟机等核心技术在Android中的实现原理。书中讲述的知识点大部分来源于工程项目研发，因而具有较强的实用性，希望可以让读者“知其然，更知其所以然”。本书分为编译篇、系统原理篇、应用原理篇、系统工具篇，共4篇25章，基本涵盖了参与Android开发所需具备的知识，并通过大量图片与实例来引导读者学习，以求尽量在源码分析外为读者提供更易于理解的思维方式。
+本书既适合Android系统工程师，也适合于应用开发工程师来阅读，从而提升Android开发能力。读者可以在本书潜移默化的学习过程中更深刻地理解Android系统，并将所学知识自然地应用到实际开发难题的解决中。
+                                        </p>]<p><h2>内容简介</h2></p>[<p>基于Android SDK zui新版本 
+全面剖析了进程/线程、内存管理、Binder机制、GUI显示系统、多媒体管理、输入系统等核心知识在Android中的实现原理 Android安全机制 虚拟  内存优化  性能优化
+通过大量图片与实例来引导读者学习，以求尽量在源码分析外，为读者提供更易于理解的思维路径 
+由浅入深，由总体框架再到细节实现，让读者尽快了解Android内核的设计思想 </p>]<p><h2>作者简介</h2></p>[<p>林学森，作者曾于多家跨国企业担任研发和管理工作，并已在国内外会议、杂志上发表多篇一作文章，获得多个发明专利。现为某世界500强科技公司高级专家、资深架构师，在业界也比较有影响力。</p>]<p><h2>目录</h2></p>
+
+目　录
+
+
+
+
+第1篇　Android编译篇
+第1章　Android系统简介　2
+1.1　Android系统发展历程　2
+1.2　Android系统特点　4
+1.3　Android系统框架　8
+第2章　Android源码下载及编译　11
+2.1　Android源码下载指南　11
+2.1.1　基于Repo和Git的
+版本管理　11
+2.1.2　Android源码下载流程　12
+2.2　原生Android系统编译指南　16
+2.2.1　建立编译环境　16
+2.2.2　编译流程　19
+2.3　定制产品的编译与烧录　22
+2.3.1　定制新产品　22
+2.3.2　Linux内核编译　26
+2.3.3　烧录/升级系统　27
+2.4　Android Multilib Build　28
+2.5　Android系统映像文件　31
+2.5.1　boot.img　32
+2.5.2　ramdisk.img　34
+2.5.3　system.img　35
+2.5.4　Verified Boot　35
+2.6　ODEX流程　37
+2.7　OTA系统升级　39
+2.7.1　生成升级包　39
+2.7.2　获取升级包　40
+2.7.3　OTA升级—Recovery
+模式　41
+2.8　Android反编译　44
+2.9　NDK Build　46
+2.10　第三方ROM的移植　48
+第3章　Android编译系统　50
+3.1　Makefile入门　50
+3.2　Android编译系统　52
+3.2.1　Makefile依赖树的概念　53
+3.2.2　Android编译系统抽象模型　53
+3.2.3　树根节点droid　54
+3.2.4　main.mk解析　55
+3.2.5　droidcore节点　59
+3.2.6　dist_files　61
+3.2.7　Android.mk的编写规则　61
+3.3　Jack Toolchain　64
+3.4　SDK的编译过程　68
+3.4.1　envsetup.sh　68
+3.4.2　lunch sdk-eng　70
+3.4.3　make sdk　75
+3.5　Android系统GDB调试　85
+第2篇　Android原理篇
+第4章　操作系统基础　90
+4.1　计算机体系结构
+（Computer　Architecture）　90
+4.1.1　冯 诺依曼结构　90
+4.1.2　哈佛结构　90
+4.2　什么是操作系统　91
+4.3　进程间通信的经典实现　93
+4.3.1　共享内存
+（Shared　Memory）　94
+4.3.2　管道（Pipe）　95
+4.3.3　UNIX Domain Socket　97
+4.3.4　RPC（Remote Procedure Calls）　99
+4.4　同步机制的经典实现　100
+4.4.1　信号量（Semaphore）　100
+4.4.2　Mutex　101
+4.4.3　管程（Monitor）　101
+4.4.4　Linux Futex　102
+4.4.5　同步范例　103
+4.5　Android中的同步机制　104
+4.5.1　进程间同步——Mutex　104
+4.5.2　条件判断——Condition　105
+4.5.3　“栅栏、障碍”——Barrier　107
+4.5.4　加解锁的自动化操作
+——Autolock　108
+4.5.5　读写锁——Reader
+WriterMutex　109
+4.6　操作系统内存管理基础　110
+4.6.1　虚拟内存
+（Virtual　Memory）　110
+4.6.2　内存保护
+（Memory　Protection）　113
+4.6.3　内存分配与回收　113
+4.6.4　进程间通信——mmap　114
+4.6.5　写时拷贝技术
+（Copy　on Write）　115
+4.7　Android中的Low
+Memory　Killer　115
+4.8　Android匿名共享内存
+（Anonymous　Shared Memory）　118
+4.8.1　Ashmem设备　118
+4.8.2　Ashmem应用实例　122
+4.9　JNI　127
+4.9.1　Java函数的本地实现　127
+4.9.2　本地代码访问JVM　130
+4.10　Java中的反射机制　132
+4.11　学习Android系统的两条线索　133
+第5章　Android进程/线程和
+程序内存优化　134
+5.1　Android进程和线程　134
+5.2　Handler, MessageQueue,
+Runnable与Looper　140
+5.3　UI主线程——ActivityThread　147
+5.4　Thread类　150
+5.4.1　Thread类的内部原理　150
+5.4.2　Thread休眠和唤醒　151
+5.4.3　Thread实例　155
+5.5　Android应用程序如何利用CPU的多核处理能力　157
+5.6　Android应用程序的典型启动流程　157
+5.7　Android程序的内存管理与优化　159
+5.7.1　Android系统对内存使用的限制　159
+5.7.2　Android中的内存泄露与内存监测　160
+第6章　进程间通信 — Binder　166
+6.1　智能指针　169
+6.1.1　智能指针的设计理念　169
+6.1.2　强指针sp　172
+6.1.3　弱指针wp　173
+6.2　进程间的数据传递载体——Parcel　179
+6.3　Binder驱动与协议　187
+6.3.1　打开Binder驱动
+——binder_open　188
+6.3.2　binder_mmap　189
+6.3.3　binder_ioctl　192
+6.4　“DNS”服务器——ServiceManager(Binder Server)　193
+6.4.1　ServiceManager的启动　193
+6.4.2　ServiceManager的构建　194
+6.4.3　获取ServiceManager服
+务—设计思考　199
+6.4.4　ServiceManagerProxy　203
+6.4.5　IBinder和BpBinder　205
+6.4.6　ProcessState和IPCThreadState　207
+6.5　Binder客户端——Binder Client　237
+6.6　Android接口描述语言——AIDL　242
+6.7　匿名Binder Server　254
+第7章　Android启动过程　257
+7.1　**个系统进程（init）　257
+7.1.1　init.rc语法　257
+7.1.2　init.rc实例分析　260
+7.2　系统关键服务的启动简析　261
+7.2.1　Android的“DNS服务器”
+——ServiceManager　261
+7.2.2　“孕育”新的线程和进程
+——Zygote　261
+7.2.3　Android的“系统服务”
+——SystemServer　274
+7.2.4　Vold和External Storage
+存储设备　276
+7.3　多用户管理　282
+第8章　管理Activity和组件运行状
+态的系统进程——Activity　ManagerService（AMS）　284
+8.1　AMS功能概述　284
+8.2　管理当前系统中Activity状态——Activity Stack　286
+8.3　startActivity流程　288
+8.4　完成同一任务的“集合”——Activity Task　296
+8.4.1　“后进先出”——Last In，First Out　297
+8.4.2　管理Activity Task　298
+8.5　Instrumentation机制　300
+第9章　GUI系统 — SurfaceFlinger　305
+9.1　OpenGL ES与EGL　305
+9.2　Android的硬件接口——HAL　307
+9.3　Android终端显示设备的“化身”
+——Gralloc与Framebuffer　309
+9.4　Android中的本地窗口　313
+9.4.1　FramebufferNativeWindow　315
+9.4.2　应用程序端的本地窗口——Surface　321
+9.5　BufferQueue详解　325
+9.5.1　BufferQueue的内部原理　325
+9.5.2　BufferQueue中的缓冲区
+分配　328
+9.5.3　应用程序的典型绘图
+流程　333
+9.5.4　应用程序与BufferQueue
+的关系　339
+9.6　SurfaceFlinger　343
+9.6.1　“黄油计划”——Project Butter　343
+9.6.2　SurfaceFlinger的启动　347
+9.6.3　接口的服务端——Client　351
+9.7　VSync的产生和处理　355
+9.7.1　VSync信号的产生和
+分发　355
+9.7.2　VSync信号的处理　361
+9.7.3　handleMessageTransaction　363
+9.7.4　“界面已经过时/无效，需要重
+新绘制”——handleMessage　Invalidate　367
+9.7.5　合成前的准备工作——preComposition　369
+9.7.6　可见区域——rebuildLayerStacks　371
+9.7.7　为“Composition”搭建环境——setUpHWComposer　375
+9.7.8　doDebugFlashRegions　377
+9.7.9　doComposition　377
+第10章　GUI系统之“窗口管理员”—WMS　385
+10.1　“窗口管理员”——WMS综述　386
+10.1.1　WMS的启动　388
+10.1.2　WMS的基础功能　388
+10.1.3　WMS的工作方式　389
+10.1.4　WMS，AMS与Activity间的联系　390
+10.2　窗口属性　392
+10.2.1　窗口类型与层级　392
+10.2.2　窗口策略（Window Policy）　396
+10.2.3　窗口属性（LayoutParams）　398
+10.3　窗口的添加过程　400
+10.3.1　系统窗口的添加过程　400
+10.3.2　Activity窗口的添加过程　409
+10.3.3　窗口添加实例　412
+10.4　Surface管理　416
+10.4.1　Surface申请流程（relayout）　416
+10.4.2　Surface的跨进程传递　420
+10.4.3　Surface的业务操作　422
+10.5　performLayoutAndPlaceSurfacesLockedInner　423
+10.6　窗口大小的计算过程　424
+10.7　启动窗口的添加与销毁　433
+10.7.1　启动窗口的添加　433
+10.7.2　启动窗口的销毁　437
+10.8　窗口动画　438
+10.8.1　窗口动画类型　439
+10.8.2　动画流程跟踪——WindowStateAnimator　440
+10.8.3　AppWindowAnimator　444
+10.8.4　动画的执行过程　446
+第11章　让你的界面炫彩起来的GUI系统 — View体系　452
+11.1　应用程序中的View框架　452
+11.2　Activity中View Tree的创建过程　455
+11.3　在WMS中注册窗口　461
+11.4　ViewRoot的基本工作方式　463
+11.5　View Tree的遍历时机　464
+11.6　View Tree的遍历流程　468
+11.7　View和ViewGroup属性　477
+11.7.1　View的基本属性　477
+11.7.2　ViewGroup的属性　482
+11.7.3　View、ViewGroup和ViewParent　482
+11.7.4　Callback接口　482
+11.8　“作画“工具集——Canvas　484
+11.8.1　“绘制UI”——Skia　485
+11.8.2　数据中介——Surface.lockCanvas　486
+11.8.3　解锁并提交结果——unlockCanvasAndPost　490
+11.9　draw和onDraw　491
+11.10　View中的消息传递　497
+11.10.1　View中TouchEvent的投递流程　497
+11.10.2　ViewGoup中Touch-Event的投递流程　500
+11.11　View动画　504
+11.12　UiAutomator　509
+第12章　“问渠哪得清如许，为有源头活水来”— InputManagerService与输入事件　514
+12.1　事件的分类　514
+12.2　事件的投递流程　517
+12.2.1　InputManagerService　518
+12.2.2　InputReaderThread　519
+12.2.3　InputDispatcherThread　519
+12.2.4　ViewRootImpl对事件的派发　523
+12.3　事件注入　524
+第13章　应用不再同质化 — 音频系统　526
+13.1　音频基础　527
+13.1.1　声波　527
+13.1.2　音频的录制、存储与回放　527
+13.1.3　音频采样　528
+13.1.4　Nyquist?CShannon采样定律　530
+13.1.5　声道和立体声　530
+13.1.6　声音定级——Weber?CFechner law　531
+13.1.7　音频文件格式　532
+13.2　音频框架　532
+13.2.1　Linux中的音频框架　532
+13.2.2　TinyAlsa　534
+13.2.3　Android系统中的音频框架　536
+13.3　音频系统的核心——Audio-Flinger　538
+13.3.1　AudioFlinger服务的启动和运行　538
+13.3.2　AudioFlinger对音频设备的管理　540
+13.3.3　PlaybackThread的循环主体　547
+13.3.4　AudioMixer　551
+13.4　策略的制定者——Audio-PolicyService　553
+13.4.1　AudioPolicyService概述　554
+13.4.2　AudioPolicyService的启动过程　556
+13.4.3　AudioPolicyService与音频设备　558
+13.5　音频流的回放——AudioTrack　560
+13.5.1　AudioTrack应用实例　560
+13.5.2　AudioPolicyService的路由实现　567
+13.6　音频数据流　572
+13.6.1　AudioTrack中的音频流　573
+13.6.2　AudioTrack和AudioFlinger间的数据交互　576
+13.6.3　AudioMixer中的音频流　582
+13.7　音量控制　584
+13.8　音频系统的上层建筑　588
+13.8.1　从功能入手　588
+13.8.2　MediaPlayer　589
+13.8.3　MediaRecorder　592
+13.8.4　一个典型的多媒体录制程序　595
+13.8.5　MediaRecorder源码解析　596
+13.8.6　MediaPlayerService简析　598
+13.9　Android支持的媒体格式　600
+13.9.1　音频格式　600
+13.9.2　视频格式　601
+13.9.3　图片格式　601
+13.9.4　网络流媒体　602
+13.10　ID3信息简述　602
+13.11　Android多媒体文件管理　606
+13.11.1　MediaStore　607
+13.11.2　多媒体文件信息的存储“仓库”——MediaProvider　608
+13.11.3　多媒体文件管理中的“生产者”—MediaScanner　611
+
+第3篇　应用原理篇
+第14章　Intent的匹配规则　616
+14.1　Intent属性　616
+14.2　Intent的匹配规则　618
+14.3　Intent匹配源码简析　624
+第15章　APK应用程序的资源适配　628
+15.1　资源类型　629
+15.1.1　状态颜色资源　630
+15.1.2　图形资源　631
+15.1.3　布局资源　632
+15.1.4　菜单资源　633
+15.1.5　字符串资源　633
+15.1.6　样式资源　634
+15.1.7　其他资源　635
+15.1.8　属性资源　635
+15.2　提供可选资源　638
+15.3　*佳资源的匹配流程　642
+15.4　屏幕适配　644
+15.4.1　屏幕适配的重要参数　644
+15.4.2　如何适配多屏幕　646
+15.4.3　横竖屏切换的处理　648
+第16章　Android字符编码格式　650
+16.1　字符编码格式背景　650
+16.2　ISO/IEC 8859　651
+16.3　ISO/IEC 10646　651
+16.4　Unicode　652
+16.5　String类型　655
+16.5.1　构建String　655
+16.5.2　String对多种编码的兼容　656
+第17章　Android和OpenGL ES　660
+17.1　3D图形学基础　661
+17.1.1　计算机3D图形　661
+17.1.2　图形管线　662
+17.2　Android中的OpenGL ES简介　664
+17.3　图形渲染API—EGL　665
+17.3.1　EGL与OpenGL ES　665
+17.3.2　egl.cfg　665
+17.3.3　EGL接口解析　667
+17.3.4　EGL实例　670
+17.4　简化OpenGL ES开发—GLSurfaceView　670
+17.5　OpenGL分析利器—GLTracer　677
+第18章　“系统的UI”——SystemUI　685
+18.1　SystemUI的组成元素　685
+18.2　SystemUI的实现　687
+18.3　Android壁纸资源—WallpaperService　694
+18.3.1　WallPaperManager-Service　695
+18.3.2　ImageWallpaper　697
+第19章　Android常用的工具
+“小插件”——Widget机制　700
+19.1　“功能的提供者”——AppWidgetProvider　700
+19.2　AppWidgetHost　702
+第20章　Android应用程序的编译和打包　707
+20.1　“另辟蹊径”采用第三方工具——Ant　707
+20.2　通过命令行编译和打包APK　708
+20.3　APK编译过程详解　709
+20.4　信息安全基础概述　711
+20.5　应用程序签名　716
+20.6　应用程序签名源码简析　719
+20.7　APK重签名实例　724
+第21章　Android虚拟机　725
+21.1　Android虚拟机基础知识　725
+21.1.1　Java虚拟机核心概念　725
+21.1.2　LLVM编译器框架　734
+21.1.3　Android中的经典垃圾回收算法　736
+21.1.4　Art和Dalvik之争　738
+21.1.5　Art虚拟机整体框架　741
+21.1.6　Android应用程序与虚拟机　742
+21.1.7　Procedure Call Standardfor Arm Architecture（过程调用标准）　744
+21.1.8　C   11标准中的新特性　746
+21.2　Android虚拟机核心文件格式—Dex字节码　749
+21.3　Android虚拟机核心文件格式—可执行文件的基石ELF　756
+21.3.1　ELF文件格式　756
+21.3.2　Linux平台下ELF文件的加载和动态链接过程　764
+21.3.3　Android Linker和动态链接库　771
+21.3.4　Signal Handler和Fault Manager　782
+21.4　Android虚拟机核心文件格式——“主宰者”OAT　786
+21.4.1　OAT文件格式解析　786
+21.4.2　OAT的两个编译时机　793
+21.5　Android虚拟机的典型启动流程　806
+21.6　堆管理器和堆空间释义　815
+21.7　Android虚拟机中的线程管理　823
+21.7.1　Java线程的创建过程　823
+21.7.2　线程的挂起过程　827
+21.8　Art虚拟机中的代码执行方式综述　829
+21.9　Art虚拟机的“中枢系统”——执行引擎之Interpreter　836
+21.10　Art虚拟机的“中枢系统”——执行引擎之JIT　839
+21.10.1　JIT重出江湖的契机　839
+21.10.2　Android N版本中JIT的设计目标及策略　840
+21.10.3　Profile Guided Compilation（追踪技术）　842
+21.10.4　AOT CompilationDaemon　843
+21.11　Art虚拟机的“中枢系统”——执行引擎之本地代码　844
+21.12　Android x86版本兼容ARM二进制代码——Native Bridge　864
+21.13　Android应用程序调试原理解析　871
+21.13.1　Java代码调试与JDWP协议　872
+21.13.2　Native代码调试　879
+21.13.3　利用GDB调试Android Art虚拟机　885
+第22章　Android安全机制透析　887
+22.1　Android Security综述　887
+22.2　SELinux　889
+22.2.1　DAC　889
+22.2.2　MAC　890
+22.2.3　基于MAC的SELinux　890
+22.3　Android系统安全保护的三重利剑　892
+22.3.1　**剑：Permission机制　893
+22.3.2　加强剑：DAC（UGO）保护　896
+22.3.3　终极剑：SEAndroid　898
+22.4　SEAndroid剖析　899
+22.4.1　SEAndroid的顶层模型　899
+22.4.2　SEAndroid相关的核心源码　900
+22.4.3　SEAndroid标签和规则　901
+22.4.4　如何在Android系统中自定义SEAndroid　903
+22.4.5　TE文件的语法规则　905
+22.4.6　SEAndroid中的核心主体—init进程　907
+22.4.7　SEAndroid中的客体　912
+22.5　Android设备Root简析　913
+22.6　APK的加固保护分析　916
+第4篇　Android系统工具
+第23章　IDE和Gradle　922
+23.1　Gradle的核心要点　922
+23.1.1　Groovy与Gradle　923
+23.1.2　Gradle的生命周期　926
+23.2　Gradle的Console语法　927
+23.3　Gradle Wrapper和Cache　929
+23.4　Android Studio和Gradle　931
+23.4.1　Gradle插件基础知识　931
+23.4.2　Android Studio中的Gradle编译脚本　932
+第24章　软件版本管理　937
+24.1　版本管理简述　937
+24.2　Git的安装　937
+24.2.1　Linux环境下安装Git　938
+24.2.2　Windows环境下安装Git　939
+24.3　Git的使用　939
+24.3.1　基础配置　939
+24.3.2　新建仓库　940
+24.3.3　文件状态　942
+24.3.4　忽略某些文件　943
+24.3.5　提交更新　944
+24.3.6　其他命令　944
+24.4　Git原理简析　945
+24.4.1　分布式版本系统的特点　946
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24.4.2　安全散列算法—SHA-1　947
+24.4.3　4个重要对象　948
+24.4.4　三个区域　953
+24.4.5　分支的概念与实例　954
+第25章　系统调试辅助工具　958
+25.1　万能模拟器——Emulator　958
+25.1.1　QEMU　958
+25.1.2　Android工程中的QEMU　963
+25.1.3　模拟器控制台（Emulator Console）　966
+25.1.4　实例：为Android模拟器添加串口功能　969
+25.2　此Android非彼Android　970
+25.3　快速建立与模拟器或真机的通信渠道——ADB　972
+25.3.1　ADB的使用方法　972
+25.3.2　ADB的组成元素　975
+25.3.3　ADB源代码解析　976
+25.3.4　ADB Protocol　981
+25.4　SDK Layoutlib　984
+25.5　TraceView和Dmtracedump　985
+25.6　Systrace　987
+25.7　代码覆盖率统计　992
+25.8　模拟GPS位置　995
+
+
